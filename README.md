@@ -1,10 +1,10 @@
 # 445 Final Project: Autonomous Driving 
 
 # 1. Our Team
-Kazuki Shin, Computer Engineering, May 2021
-Rishav Rout, Computer Science, May 2021
-Aneesh Mysore, Computer Science, December 2020
-Kshitij Gupta, Computer Science, May 2020
+Kazuki Shin, Computer Engineering, May 2021 . 
+Rishav Rout, Computer Science, May 2021 . 
+Aneesh Mysore, Computer Science, December 2020 . 
+Kshitij Gupta, Computer Science, May 2020 . 
 
 # 2. Project Topic
 We want to implement the perception side of autonomous vehicles. The problem we want to solve is safety of driver assistance systems in modern level 2 autonomous vehicles. Our goal is to create an RC car that is able to reliably detect objects in a traffic based environments and react accordingly. This would include tasks such as image stitching, image enhancement, lane tracking, and human/traffic signal detection.
