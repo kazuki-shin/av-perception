@@ -1,5 +1,18 @@
-# 445 Final Project: Autonomous Driving 
+# 445 Final Project: Autonomous Driving
 
+# Project Pipeline
+1. ROS
+2. Image Stitching
+3. Image Enhancement
+4. Object Detection
+  * Stop sign
+  * Traffic lights
+  * Human body and face
+
+# Installation
+https://github.com/madhawav/YOLO3-4-Py
+
+# Project Proposal
 # 1. Our Team
 Kazuki Shin, Computer Engineering, May 2021\
 Rishav Rout, Computer Science, May 2021\
@@ -16,26 +29,26 @@ I (Kazuki) am interested in driver attention detection within the vehicle since 
 
 I (Kshitij) think that this will be very interesting to work on because I have always been fascinated by autonomous cars. There is a lot of exciting work being done in this area currently and I would love to explore this area.
 
-I (Aneesh) think that this is a very interesting topic because I have never actually worked with autonomous cars. What fascinates me about autonomous cars is the technology behind them and how this technology can be so helpful in other areas. There are also many obvious financial benefits such as in regards to car insurance, etc. I want to work in this area during my career and so I would love to explore more into this topic. 
+I (Aneesh) think that this is a very interesting topic because I have never actually worked with autonomous cars. What fascinates me about autonomous cars is the technology behind them and how this technology can be so helpful in other areas. There are also many obvious financial benefits such as in regards to car insurance, etc. I want to work in this area during my career and so I would love to explore more into this topic.
 
-I (Rishav) think this would be really cool topic to work on since autonomous driving is something that people point to when they talk about computer science, especially within artificial intelligence. Being able to work on something like this, and understanding how it works internally, is part of the reason I wanted to major in computer science. 
+I (Rishav) think this would be really cool topic to work on since autonomous driving is something that people point to when they talk about computer science, especially within artificial intelligence. Being able to work on something like this, and understanding how it works internally, is part of the reason I wanted to major in computer science.
 
 # 4. Resources
-Remote control car 
+Remote control car
 Jetson TX2 for image processing
-Arduino for control command to motor output 
-Computer with GPU 
+Arduino for control command to motor output
+Computer with GPU
 Battery to power the RC and Jetson
 
 # 5. Approach
 
 Step 1: Data Input. Get data from all 3 logitech cameras by setting up ROS nodes, topics so we can publish and subscribe to the master, allowing us to get image data. (Kazuki)
 
-Step 2: Video Stitching. We create a module that stitches images from three cameras that are fixed on the RC car. We will be using methods similar to the resources linked below to stitch the images from cameras attached at different angles to get wide angled view of the surroundings of the RC car. Because of this there will be distortion created in the image and we will be correcting this as described later. (Kshitij) 
-https://github.com/ppwwyyxx/OpenPano 
-https://github.com/ziqiguo/CS205-ImageStitching 
+Step 2: Video Stitching. We create a module that stitches images from three cameras that are fixed on the RC car. We will be using methods similar to the resources linked below to stitch the images from cameras attached at different angles to get wide angled view of the surroundings of the RC car. Because of this there will be distortion created in the image and we will be correcting this as described later. (Kshitij)
+https://github.com/ppwwyyxx/OpenPano
+https://github.com/ziqiguo/CS205-ImageStitching
 
-Step 3: Image processing and Enhancement. We create a module that takes in stitched images from the previous module and applies various image enhancement techniques like color and contrast enhancement. We are going to be using our implementation from project to perform this part. (Aneesh) 
+Step 3: Image processing and Enhancement. We create a module that takes in stitched images from the previous module and applies various image enhancement techniques like color and contrast enhancement. We are going to be using our implementation from project to perform this part. (Aneesh)
 
 Step 4: Lane Tracking. In order to do lane tracking we will first start by correcting the distortion that occurs when data from the 3-D world are transformed into 2-D images. The way we plan to do this is by using Python’s OpenCV library that address two common types of distortions: 1) radial distortion and 2) tangential distortion. (Aneesh)
 
@@ -48,5 +61,5 @@ Derived from the algorithm described here: https://medium.com/@kenan.r.alkiek/ht
 
 Step 7: All the sensor information is then mapped to the action space. For example when a stop sign is detected, the value will be mapped to the break so that the vehicle will stop moving after the object is detected. (Kazuki)
 
-# 6. Evaluation/Result: 
+# 6. Evaluation/Result:
 For evaluation we are going to be building a track for the RC car. This is going to include different things like traffic signals using leds, stop signs and miniature human toys. We are then going to test the car if it stop automatically at the correct times. Quantitative results can be measured through sensor data delivered through ROS messages. For example, if the agent is in motion and the camera recognized a red stop sign, the ROS node should publish values to the break telling it to stop. We can check the validity of our vision program by comparing it to state of the art deep learning detectors such as darknet YOLO.
