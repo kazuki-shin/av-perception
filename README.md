@@ -1,13 +1,6 @@
 # 445 Final Project: av_perception
 
-# Project Pipeline
-1. ROS
-2. Image Stitching
-3. Image Enhancement
-4. Object Detection
-  * Stop sign
-  * Traffic lights
-  * Human body and face
+Final Project Wiki: https://github.com/kazuki-shin/av-perception/wiki
 
 # Project Proposal
 # 1. Our Team
