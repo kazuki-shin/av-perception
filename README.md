@@ -1,5 +1,6 @@
 # 445 Final Project: av_perception
 
+![result](rc.png)
 Final Project Wiki: https://github.com/kazuki-shin/av-perception/wiki
 
 # Project Proposal
